@@ -255,6 +255,7 @@ a{color:inherit;text-decoration:none}
 .topic-catalog-stage-head p{font-size:13px;color:var(--text-dim);margin-top:5px;max-width:760px}
 .topic-catalog-groups{display:grid;gap:16px}
 .topic-catalog-group h4{font-size:12px;color:var(--cyan);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.topic-catalog-prerequisites{font-size:12px;line-height:1.55;color:var(--text-dim);margin:0 0 9px}
 .topic-catalog-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:0}
 .topic-catalog-item{min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.12);overflow-wrap:anywhere}
 .topic-catalog-item strong{display:block;font-size:13px;line-height:1.45;color:var(--text)}
@@ -267,6 +268,7 @@ a{color:inherit;text-decoration:none}
   .topic-catalog-stage-head h3{font-size:20px}
   .topic-catalog-stage-head p{font-size:14.5px;line-height:1.65}
   .topic-catalog-group h4{font-size:14px;margin:4px 0 10px}
+  .topic-catalog-prerequisites{font-size:14px;line-height:1.65}
   .topic-catalog-item{padding:14px}
   .topic-catalog-item strong{font-size:16px;line-height:1.5}
   .topic-catalog-detail{font-size:14.5px;line-height:1.7}
@@ -278,7 +280,7 @@ a{color:inherit;text-decoration:none}
   .topic-playbook summary,.lab-steps>summary{min-height:44px;display:flex;align-items:center;font-size:14.5px;line-height:1.6}
   .topic-playbook p,.topic-playbook li,.detail li{font-size:15px;line-height:1.7}
   .topic-note-summary{min-height:44px;display:flex;align-items:center;font-size:14.5px!important}
-  .detail .body{padding:18px 16px}
+  .detail .panel>.body{padding:18px 16px}
 }
 #topics{scroll-margin-top:76px}
 
@@ -301,7 +303,7 @@ a{color:inherit;text-decoration:none}
   display:flex;align-items:start;gap:14px
 }
 .detail .head h2{flex:1;font-size:22px;letter-spacing:-.3px}
-.detail .body{padding:24px}
+.detail .panel>.body{padding:24px}
 .tag{
   display:inline-block;padding:3px 10px;border-radius:99px;background:rgba(59,130,246,.12);
   color:var(--blue);font-size:11.5px;font-weight:600;letter-spacing:.4px;margin-right:6px;margin-bottom:4px
@@ -526,6 +528,65 @@ h5{font-size:13.5px;color:var(--text-mute);text-transform:uppercase;letter-spaci
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 .field-guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}.field-guide-card{min-width:0;padding:13px;border:1px solid var(--line);border-radius:11px;background:rgba(8,16,29,.55)}.field-guide-card h4{font-size:12px;margin:0 0 7px;color:var(--cyan)}.field-guide-card p,.field-guide-card li{font-size:12px;color:var(--text-dim);line-height:1.55}.field-guide-card ul{padding-left:18px}.field-guide-card li{margin:0 0 5px}.guide-commands{display:grid;gap:6px}.guide-commands code{font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b8d6ff;background:rgba(0,0,0,.25);padding:5px 7px;border-radius:6px;overflow-wrap:anywhere}.project-brief{border:1px solid var(--line);border-radius:9px;padding:10px 11px;background:rgba(0,0,0,.12)}.project-brief summary{cursor:pointer;color:#91c3ff;font-size:12px;font-weight:600}.project-brief-body{padding-top:9px}.project-brief-body h5{font-size:11px;margin:10px 0 4px;color:var(--cyan)}.project-brief-body p,.project-brief-body li,.project-build-steps li{font-size:12px;color:var(--text-dim);line-height:1.55}.project-brief-body ul,.project-build-steps{padding-left:18px}.project-brief-body li,.project-build-steps li{margin-bottom:4px}.project-build-steps{padding-top:8px}@media(max-width:620px){.field-guide{grid-template-columns:1fr}}
+/* Full-screen topic reader: keep the reading surface roomy on every device. */
+.detail{justify-content:center;background:rgba(0,0,0,.76);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.detail .panel{width:100%;max-width:none;height:100vh;height:100dvh;border:0;border-radius:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;animation:none;padding-bottom:env(safe-area-inset-bottom)}
+.detail .head{padding:calc(14px + env(safe-area-inset-top)) clamp(16px,4vw,48px) 16px;align-items:center;gap:16px}
+.detail .head h2{font-size:clamp(20px,2.2vw,28px);line-height:1.3;letter-spacing:-.35px}
+.detail .panel>.body{width:100%;max-width:1120px;margin:0 auto;padding:28px clamp(16px,4vw,48px) 48px}
+.detail h3{font-size:19px;line-height:1.4;margin:22px 0 12px}
+.detail li{font-size:15.5px;line-height:1.75;margin-bottom:8px}
+.detail p{font-size:15.5px;line-height:1.75;margin-bottom:12px}
+.task{gap:14px;padding:15px}
+.task .check{width:24px;height:24px}
+.task .title{font-size:16px;line-height:1.5}
+.task .meta{font-size:13px;line-height:1.55}
+.task .desc{font-size:14.5px;line-height:1.7}
+.topic-playbook{padding:12px 14px}
+.topic-playbook summary,.lab-steps>summary{display:flex;align-items:center;min-height:48px;font-size:14.5px;line-height:1.6;padding:8px 0}
+.topic-playbook p,.topic-playbook li{font-size:14.5px;line-height:1.75}
+.content-accordion>summary,.topic-entry>summary{min-height:52px;padding:14px 16px;font-size:15.5px;line-height:1.55}
+.accordion-content{padding:0 18px 18px}
+.topic-entry-body{padding:0 16px 16px}
+.topic-entry-body>.desc{font-size:15px;line-height:1.7}
+.note-area{min-height:96px;font-size:15px;line-height:1.65}
+.workload-card h4{font-size:16px}
+.workload-card p{font-size:14px;line-height:1.7}
+.workload-links{font-size:13.5px;line-height:1.6}
+.workload-ref-title{font-size:14px}
+.workload-ref-note{font-size:13px;line-height:1.65}
+.detail .field-guide-card h4{font-size:15.5px;line-height:1.45}
+.detail .field-guide-card p,.detail .field-guide-card li{font-size:15px;line-height:1.7}
+.detail .guide-commands code{font-size:13px;line-height:1.6}
+.detail .project-brief summary{display:flex;align-items:center;min-height:48px;font-size:15px;line-height:1.6}
+.detail .project-brief-body h5{font-size:14px;line-height:1.5}
+.detail .project-brief-body p,.detail .project-brief-body li,.detail .project-build-steps li{font-size:15px;line-height:1.7}
+.detail .topic-note-summary{min-height:48px;font-size:15px!important;line-height:1.6}
+@media(max-width:700px){
+  .detail .head{padding:calc(12px + env(safe-area-inset-top)) 16px 13px;gap:12px}
+  .detail .head h2{font-size:21px;line-height:1.35}
+  .detail .panel>.body{padding:20px 16px calc(32px + env(safe-area-inset-bottom))}
+  .detail h3{font-size:18px}
+  .detail li,.detail p{font-size:15.5px;line-height:1.75}
+  .content-accordion>summary,.topic-entry>summary{min-height:52px;padding:14px;font-size:16px;line-height:1.6}
+  .topic-entry-body{padding:0 14px 16px}
+  .topic-entry-body>.desc{font-size:15.5px;line-height:1.75}
+  .topic-playbook{padding:12px}
+  .topic-playbook summary,.lab-steps>summary{min-height:48px;font-size:15px;line-height:1.65}
+  .topic-playbook p,.topic-playbook li{font-size:15.5px;line-height:1.75}
+  .task{gap:12px;padding:14px}
+  .task .title{font-size:16px}
+  .task .meta{font-size:13px}
+  .task .desc{font-size:15px;line-height:1.75}
+  .task .check{width:26px;height:26px}
+  .accordion-content{padding:0 14px 16px}
+  .workload-card p{font-size:14.5px}
+  .detail .field-guide-card h4{font-size:16px}
+  .detail .field-guide-card p,.detail .field-guide-card li{font-size:15.5px;line-height:1.75}
+  .detail .project-brief summary{min-height:50px;font-size:16px}
+  .detail .project-brief-body h5{font-size:14.5px}
+  .detail .project-brief-body p,.detail .project-brief-body li,.detail .project-build-steps li{font-size:15.5px;line-height:1.75}
+}
 </style>
 </head>
 <body>
@@ -576,7 +637,7 @@ h5{font-size:13.5px;color:var(--text-mute);text-transform:uppercase;letter-spaci
       <div>
         <div class="greet" id="greet">Good morning, engineer.</div>
         <h1>Welcome, Future<br/><span class="accent">DevOps Engineer.</span></h1>
-        <p class="lead">A production-grade learning command center covering the full journey — from your first <code>ls</code> to operating multi-region Kubernetes platforms. Interactive, persistent, opinionated.</p>
+        <p class="lead">A structured DevOps learning path from Linux and networking through cloud, Kubernetes, delivery, security, and operations. Browse topics by stage, then use the available task guides, labs, and projects to practice.</p>
         <div class="hero-cta">
           <button class="btn btn-primary" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">
             Start My Journey
@@ -1018,7 +1079,7 @@ h5{font-size:13.5px;color:var(--text-mute);text-transform:uppercase;letter-spaci
 <div class="footer">
   <div class="container">
     <p>DevOps Universe — A learning command center, not a substitute for hands-on practice.</p>
-    <p>All data stays in your browser via localStorage. No tracking, no backend, no accounts.</p>
+    <p>Progress and notes are saved in this browser’s local storage and do not sync across devices. Use Settings → Export JSON to back them up or move them. No tracking or backend.</p>
   </div>
 </div>
 </div>
@@ -3333,8 +3394,8 @@ function totalHours(){
   return Math.ceil(stageHours+addedPracticeHours+labHours);
 }
 
-/* Topic-level production playbooks. These are tailored by domain and rendered
-   on every topic so a concept has a path from design through operation. */
+/* Stage-tuned production checklists. These are reusable review prompts, not
+   topic-specific runbooks; topic notes and hands-on stage tasks remain separate. */
 const TOPIC_PRODUCTION_PLAYBOOKS={
   fundamentals:{design:'Map the host, operating-system version, owner, dependencies, and failure boundary. Prefer a documented baseline and a reproducible image over undocumented one-off setup.',build:'Make the change in a disposable VM or versioned setup script; preserve least privilege, stable naming, and a recovery point before touching disks, boot, permissions, or repositories.',verify:'Check expected state after reboot and from a clean session. Capture command output, package/image versions, and a failure case so another learner can reproduce the result.',release:'Pilot on one non-critical host, compare with the baseline, and keep a tested restore or rollback path for boot, filesystem, and repository changes.',operate:'Maintain ownership, patch and backup cadence, inventory, access review, and a short runbook; revisit assumptions when workload or hardware changes.'},
   linux:{design:'Inventory distribution, kernel, service owner, systemd dependencies, resource limits, network exposure, and recovery console access.',build:'Apply idempotent configuration with a managed unit or reviewed script; use a dedicated service account, restrictive file modes, and explicit timeouts and limits.',verify:'Use systemctl, journalctl, ss, resource signals, and a synthetic request to verify both healthy and failed behavior; check SELinux/AppArmor and reboot persistence.',release:'Canary one disposable host, keep a console or out-of-band recovery path, and roll back the exact config/package change if health degrades.',operate:'Track patch level, disk/inode/file-descriptor capacity, certificate expiry, service health, and configuration drift; maintain tested backup and rescue steps.'},
@@ -3488,8 +3549,8 @@ function openDetail(stageId){
           el('div',{class:'topic-entry-body'},
             el('div',{class:'desc text-dim'},topicDetail),
             el('details',{class:'topic-playbook'},
-              el('summary',{},'Production implementation guide · 7 practical steps'),
-              el('p',{},`Apply “${topicTitle}” in a controlled environment, prove the result, and leave behind operational evidence another engineer can review.`),
+              el('summary',{},'Reusable production checklist · stage-tuned'),
+              el('p',{},`This is a general production checklist for the ${domainLabel(s.domain)} stage, not a topic-specific implementation recipe for “${topicTitle}”. Use the stage tasks and labs for concrete practice.`),
               el('ol',{},...topicProductionSteps(s,t).map(step=>el('li',{},step)))
             ),
             el('details',{style:'margin-top:6px'},
@@ -3643,7 +3704,8 @@ function topicGroupsForStage(s){
   const groups=TOPIC_DIRECTORY_FIELDS.map(([key,label])=>({label,items:s[key]||[]})).filter(g=>g.items.length);
   const tracks=(s.tracks||[]).map(track=>({
     label:`Specialist track · ${track.n}`,
-    items:(track.t||[]).map(item=>({t:item,d:`Prerequisites: ${(track.prereqs||[]).join(' · ')||'See track guide'}`}))
+    prerequisites:track.prereqs||[],
+    items:track.t||[]
   }));
   return groups.concat(tracks);
 }
@@ -3659,9 +3721,10 @@ function renderTopicCatalog(){
   stages.forEach(s=>{
     const groups=topicGroupsForStage(s).map(group=>({
       label:group.label,
+      prerequisites:group.prerequisites||[],
       items:group.items.filter(item=>{
         if(!query) return true;
-        const haystack=[s.title,s.desc,group.label,topicTitle(item),topicDescription(item)].join(' ').toLowerCase();
+        const haystack=[s.title,s.desc,group.label,(group.prerequisites||[]).join(' '),topicTitle(item),topicDescription(item)].join(' ').toLowerCase();
         return haystack.includes(query);
       })
     })).filter(group=>group.items.length);
@@ -3676,6 +3739,7 @@ function renderTopicCatalog(){
       ),
       el('div',{class:'topic-catalog-groups'},...groups.map(group=>el('section',{class:'topic-catalog-group'},
         el('h4',{},group.label),
+        group.prerequisites.length?el('p',{class:'topic-catalog-prerequisites'},`Prerequisites: ${group.prerequisites.join(' · ')}`):null,
         el('ul',{class:'topic-catalog-list'},...group.items.map(item=>{
           const description=topicDescription(item);
           return el('li',{class:'topic-catalog-item'},
